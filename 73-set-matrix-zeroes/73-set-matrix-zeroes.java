@@ -20,6 +20,7 @@ class Solution {
          } 
         }
         
+        // traversing to set 0 in whole matrix
         for(int i = 1; i < row;i++){
             for(int j =1 ; j < col;j++){
                 if(matrix[i][0]==0 || matrix[0][j]==0){
