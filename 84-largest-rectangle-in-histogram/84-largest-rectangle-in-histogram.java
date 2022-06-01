@@ -11,14 +11,12 @@ class Solution {
     
     public int largestRectangleArea(int[] heights) {
         int n = heights.length;
-        Stack<pair> s = new Stack<>();
-        Stack<pair> st = new Stack<>();
-        int left[] = new int[n];
-        int right[] = new int[n];
-        
-        
         // next smaller to left
         // if next smaller not found then make it --> -1 
+        
+        Stack<pair> s = new Stack<>();
+        int left[] = new int[n];
+        
         for(int i = 0 ; i < n ;i++){
             
             if(s.size() == 0 ){
@@ -48,6 +46,9 @@ class Solution {
         
         // next smaller to right
         // if next smaller not found then make it --> nc 
+       
+        Stack<pair> st = new Stack<>();
+        int right[] = new int[n];
         for(int i = n-1 ; i >= 0 ;i--){
             
             if(st.size() == 0 ){
@@ -75,13 +76,14 @@ class Solution {
         }
         
         
-        
+        // width = right-left-1
         int width[] = new int[n];
         for(int j = 0 ; j < n ; j++){
             width[j] = right[j] - left[j] - 1;
             
         }
         
+        // area = height*width
         int area[] = new int[n];
         
         for(int j = 0 ; j < n ; j++){
@@ -89,6 +91,7 @@ class Solution {
             
         }
         
+        // find area and return it
         int max = area[0];
         
          for(int j = 0 ; j < n ; j++){
