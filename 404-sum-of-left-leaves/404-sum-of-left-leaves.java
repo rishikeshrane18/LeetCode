@@ -18,10 +18,11 @@ class Solution {
     public int sumOfLeftLeaves(TreeNode root) {
         
          
-        
+        // base condition
         if(root == null){return 0;}
         
-        
+        // checking its left last node or not
+        // addition operation also going here
         if(root.left != null){
             
             if(root.left.left == null && root.left.right == null){
@@ -30,7 +31,7 @@ class Solution {
             
         }
         
-        
+        // recursion for left and right
         sumOfLeftLeaves(root.left) ;
         sumOfLeftLeaves(root.right);
         
